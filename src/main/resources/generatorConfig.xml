@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+	<context id="MySQLTables" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/sell?useSSL=false" userId="root"
+			password="19990816">
+		</jdbcConnection>
+
+		
+		<javaModelGenerator
+			targetPackage="com.yc.SellStore.bean" targetProject="src/main/java">
+
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.yc.SellStore.dao"
+			targetProject="src/main/java">
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.yc.SellStore.dao" targetProject="src/main/java">
+		</javaClientGenerator>
+
+		<table  tableName="clientInfo">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="goods">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="address">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="evalute">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="olderList">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="picture">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="shopcar">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table  tableName="driver">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+	</context>
+</generatorConfiguration>
