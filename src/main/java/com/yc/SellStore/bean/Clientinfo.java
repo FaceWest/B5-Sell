@@ -1,5 +1,7 @@
 package com.yc.SellStore.bean;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Clientinfo {
     /**
      *
@@ -17,6 +19,7 @@ public class Clientinfo {
      *
      * @mbg.generated Sat Apr 27 19:50:22 CST 2019
      */
+    @NotEmpty(message="用户名不能为空")
     private String clientname;
 
     /**
@@ -26,6 +29,7 @@ public class Clientinfo {
      *
      * @mbg.generated Sat Apr 27 19:50:22 CST 2019
      */
+    @NotEmpty(message="密码不能为空")
     private String pwd;
 
     /**

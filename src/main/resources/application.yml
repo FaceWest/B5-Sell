@@ -4,6 +4,16 @@ spring:
   driverClassName: com.mysql.cj.jdbc.Driver
   username: root
   password: 19990816
+  
+  # 配置静态文件扫描
+ resources:
+  staticLocations: 
+    - file:/Users/longhongjiang/Downloads/myweb/
+    - classpath:/static/
+    - classpath:/public/
+ 
+ 
+ 
  
  mvc:
   view:
