@@ -30,4 +30,9 @@ public Clientinfo login(Clientinfo ci) throws BizException{
 }
 
 
+public void register(Clientinfo ci) {
+       cim.insert(ci);
+}
+
+
 }

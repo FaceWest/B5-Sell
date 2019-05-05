@@ -56,6 +56,14 @@ public class Loginaction {
 	public String register(@ModelAttribute("Clientinfo") Clientinfo ci) {
 		return"register";
 	}
-	
+	@PostMapping("/toregister")
+	public String toregister(@ModelAttribute @Valid Clientinfo ci,Errors errors,Model model) {
+		if(errors.hasErrors()) {
+			return "register";
+		}
+		cbiz.register(ci);
+		model.addAttribute("msg","注册成功");
+		return "home";
+	}
 	
 }

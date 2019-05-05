@@ -53,10 +53,10 @@
 			<div class="key">
 				<form:input type="password" path="pwd" value="Password" onfocus="this.value = '';" id="pwd" ></form:input>
 				<form:errors path="pwd"></form:errors>
-				<form:input type="password" path="pwd" value="Password" onfocus="this.value = '';" id="pwd" ></form:input>
+				<form:input type="password" path="repwd" value="Password" onfocus="this.value = '';" id="pwd" ></form:input>
 			</div>
 			<div class="signin">
-				<input type="submit" value="Login">
+				<input type="submit" value="注册">
 			</div>
 		</form:form>
 	</div>
