@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,8 +42,12 @@
 </head>
 
 <body class="body-wrapper">
-
+<c:if test="${! empty loginedClient}">
+<jsp:include page="head/loginedhead.jsp"></jsp:include>
+</c:if>
+<c:if test="${empty loginedClient}">
 <jsp:include page="head/head.jsp"></jsp:include>
+</c:if>
 <!--==================================
 =            User Profile            =
 ===================================-->
@@ -56,12 +62,12 @@
 					<div class="widget user-dashboard-profile">
 						<!-- User Image -->
 						<div class="profile-thumb">
-							<img src="../../images/user/user-thumb.jpg" alt="" class="rounded-circle">
+							<img src="${loginedClient.headpic}" alt="" class="rounded-circle">
 						</div>
+						
 						<!-- User Name -->
-						<h5 class="text-center">Samanta Doe</h5>
-						<p>Joined February 06, 2017</p>
-						<a href="user-profile.html" class="btn btn-main-sm">Edit Profile</a>
+						<h5 class="text-center">${loginedClient.clientname}</h5>
+						<a href="user-profile" class="btn btn-main-sm">编辑资料</a>
 					</div>
 					<!-- Dashboard Links -->
 					<div class="widget user-dashboard-menu">

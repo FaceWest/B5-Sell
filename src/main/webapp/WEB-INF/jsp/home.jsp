@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,8 +48,12 @@
 </head>
 
 <body class="body-wrapper">
-
+<c:if test="${! empty loginedClient}">
+<jsp:include page="head/loginedhead.jsp"></jsp:include>
+</c:if>
+<c:if test="${empty loginedClient}">
 <jsp:include page="head/head.jsp"></jsp:include>
+</c:if>
 	<!--===============================
 =            Hero Area            =
 ================================-->
@@ -232,6 +237,7 @@
 									src="../../images/products/products-3.jpg" alt="Card image cap">
 								</a>
 							</div>
+							
 							<div class="card-body">
 								<h4 class="card-title">
 									<a href="">11inch Macbook Air</a>

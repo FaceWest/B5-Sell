@@ -18,9 +18,9 @@
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet'
 	type='text/css'>
-<!--//webfonts-->
-<script
-	src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+  <!--//webfonts-->
+
 </head>
 <body>
 	<script>
@@ -29,13 +29,16 @@
 				$('.login-form').fadeOut('slow', function(c) {
 					$('.login-form').remove();
 				});
+				window.location.href="index";
 			});
 		});
 	</script>
 	<!--SIGN UP-->
 	<h1>用户注册</h1>
 	<div class="login-form">
-		<div class="close"></div>
+		<div class="close">
+		
+		</div>
 		<div class="head-info">
 			<label class="lbl-1"> </label> <label class="lbl-2"> </label> <label
 				class="lbl-3"> </label>
@@ -51,11 +54,11 @@
 			<form:input path="phone" type="text" class="text" value="phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'phone';}"/>
 			<form:input path="sex" type="text" class="text" value="sex" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'sex';}"/>
 			<div class="key">
-				<form:input type="password" path="pwd" value="Password" onfocus="this.value = '';" id="pwd" ></form:input>
+				<form:input type="password" path="pwd" value="Password" onfocus="this.value = '';" id="pwd" placeholder="密码"></form:input>
 				<form:errors path="pwd"></form:errors>
-				<form:input type="password" path="repwd" value="Password" onfocus="this.value = '';" id="pwd" ></form:input>
+				<input type="password" id="repwd" value="Password" onfocus="this.value = '';" id="pwd" placeholder="确认密码"></input>
 			</div>
-			<div class="signin">
+			<div class="register">
 				<input type="submit" value="注册">
 			</div>
 		</form:form>

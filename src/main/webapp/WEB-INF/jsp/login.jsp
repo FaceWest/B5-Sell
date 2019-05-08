@@ -19,8 +19,7 @@
 <link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet'
 	type='text/css'>
 <!--//webfonts-->
-<script
-	src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
 	<script>
@@ -29,6 +28,7 @@
 				$('.login-form').fadeOut('slow', function(c) {
 					$('.login-form').remove();
 				});
+				window.location.href="index";
 			});
 		});
 	</script>
