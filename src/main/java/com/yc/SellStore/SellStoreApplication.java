@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SellStoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SellStoreApplication.class, args);
+		SpringApplication.run(SellStoreApplication.class, args); 
 	}
-
 }
