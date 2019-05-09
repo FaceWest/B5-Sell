@@ -3,7 +3,7 @@ spring:
   url: jdbc:mysql://127.0.0.1:3306/sell?useSSL=false
   driverClassName: com.mysql.cj.jdbc.Driver
   username: root
-  password: a
+  password: 19990816
   
   # 配置静态文件扫描
  resources:
@@ -12,14 +12,16 @@ spring:
     - classpath:/static/
     - classpath:/public/
  
- 
- 
- 
  mvc:
   view:
     prefix: WEB-INF/jsp/
     suffix: .jsp
+    
+ servlet:
+  multipart:
+   max-file-size: 10MB
    
+
 logging:
  level:
    root: ERROR
