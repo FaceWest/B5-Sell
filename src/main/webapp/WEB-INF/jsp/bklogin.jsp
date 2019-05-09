@@ -21,28 +21,36 @@
     <script type="text/javascript" src="framework/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-<form>
+<form:form action="tobklogin" method="post" id="bkloginForm" modelAttribute="Admininfo">
     <div class="login_main">
         <div class="login_title">
-			穷在闹市出品
+			B5 Sell Management
         </div>
         <div class="login_account">
-            <input type="text" placeholder="手机/邮箱/登录帐号"/>
+        	<form:input type="text" class="text" path="adminName"
+				value="Username" onfocus="this.value = '';"
+				onblur="if (this.value == '') {this.value = 'Username';}"></form:input>
+			<form:errors path="adminName" placeholder="手机/邮箱/登录帐号"></form:errors>
+           <!--  <input type="text" placeholder="手机/邮箱/登录帐号"/> -->
         </div>
         <div class="login_password">
-            <input type="password" placeholder="密码（8-20位，区分大小写）"/>
+        	<form:input type="password" path="adminPwd" value="Password"></form:input>
+			<form:errors path="adminPwd" placeholder="密码（8-20位，区分大小写）"></form:errors>
+            <%-- <input type="password" placeholder="密码（8-20位，区分大小写）"/> --%>
         </div>
         <div class="login_dis">
             <input type="checkbox"/>
             <p>下次自动登录</p><a href="#" target="_blank">忘记密码?</a>
         </div>
         <div class="login_submit">
-            <a href="index.html">登&nbsp;录</a>
+           <!--  <a href="index.html">登&nbsp;录</a> -->
+           <a onclick="document.getelementbyid('bkloginForm').submit();return false;">登&nbsp;录</a>
+          <!--  <input type="submit" value="Login"> -->
         </div>
         <div class="login_register">
             <a href="" target="_blank">没有账号，免费注册</a>
         </div>
     </div>
-</form>
+</form:form>
 </body>
 </html>
