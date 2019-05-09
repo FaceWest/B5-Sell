@@ -39,7 +39,6 @@ public class Loginaction {
 	
 
 	@PostMapping("tologin")
-	
 	public String tologin(@ModelAttribute @Valid Clientinfo ci,Errors errors,Model model,HttpServletRequest request) {
 		if(errors.hasErrors()) {
 			return "login";

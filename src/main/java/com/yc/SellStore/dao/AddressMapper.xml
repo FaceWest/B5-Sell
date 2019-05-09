@@ -265,4 +265,5 @@
       clientid = #{clientid,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
 </mapper>

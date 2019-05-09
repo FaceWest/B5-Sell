@@ -165,4 +165,5 @@ public class Evalute {
     public void setEvalutecol(String evalutecol) {
         this.evalutecol = evalutecol;
     }
+
 }

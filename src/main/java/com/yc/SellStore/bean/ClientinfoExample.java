@@ -1,3 +1,4 @@
+
 package com.yc.SellStore.bean;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package com.yc.SellStore.bean;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class DriverExample {
@@ -639,4 +640,5 @@ public class DriverExample {
             this(condition, value, secondValue, null);
         }
     }
+
 }
