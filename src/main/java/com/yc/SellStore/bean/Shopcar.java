@@ -1,3 +1,4 @@
+
 package com.yc.SellStore.bean;
 
 public class Shopcar {

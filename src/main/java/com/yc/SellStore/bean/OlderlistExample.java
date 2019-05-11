@@ -1,5 +1,5 @@
-package com.yc.SellStore.bean;
 
+package com.yc.SellStore.bean;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -39,6 +39,15 @@
   <![endif]-->
 
 </head>
+<script type="text/javascript">
+function info(){
+	$('#userinfo').form('submit',{
+		success: function(){
+		}
+	});
+}
+
+</script>
 
 <body class="body-wrapper">
 
@@ -48,6 +57,9 @@
 </c:if>
 <c:if test="${ empty loginedClient}">
 <jsp:include page="head/head.jsp"></jsp:include>
+</c:if>
+<c:if test="${! empty message}">
+<script>alert("${message}")</script>
 </c:if>
 <!--==================================
 =            User Profile            =
@@ -96,32 +108,34 @@
 				<!-- Edit Personal Info -->
 				<div class="widget personal-info">
 					<h3 class="widget-header user">编辑个人信息</h3>
-						</div>
-						<form:form action="changeinfo" method="post" id="userinfo" modelAttribute="clientinfo" >
+						
+						<form:form action="/editinfo" method="post" id="userinfo" modelAttribute="clientinfo" enctype="multipart/form-data" >
 						<!-- Last Name -->
+						<form:input type="hidden" path="clientid" value="${loginedClient.clientid}" />
+						<form:input path="headpic" type="hidden" value="${loginedClient.headpic}"/>
 						<div class="form-group">
 						    <label for="name">姓名</label>
-						<form:input type="text" class="form-control" path="clientname"/>
+						<form:input type="text" class="form-control" value="${loginedClient.clientname}" path="clientname"/>
 						</div>
 						<!-- File chooser -->
 						<div class="form-group choose-file">
 							<i class="fa fa-user text-center"></i>
-						    <form:input type="file" class="form-control-file d-inline" path="headpic"/>
+						    <input type="file" class="form-control-file d-inline" id="file" name="file"/>
 						 </div>
 					
 					
 						<!-- Comunity Name -->
 						<div class="form-group">
 						    <label for="comunity-name">送货地址</label>
-						    <input type="text" class="form-control" id="address"/>
+						    <form:input type="text" class="form-control" id="address" path="address"/>
 						</div>
-						<button class="btn btn-transparent">保存更改</button>
+						<button class="btn btn-transparent" onclick="info()">保存更改</button>
 						</form:form>
-					
+					</div>
 				<!-- Change Password -->
 				<div class="widget change-password">
 					<h3 class="widget-header user">修改密码</h3>
-					<form action="#">
+					<form action="#" method="post" >
 						<!-- Current Password -->
 						<div class="form-group">
 						    <label for="current-password">当前密码</label>
@@ -144,20 +158,20 @@
 				
 				<!-- Change Email Address -->
 				<div class="widget change-email mb-0">
-					<h3 class="widget-header user">修改邮箱地址</h3>
+					<h3 class="widget-header user">修改手机号码</h3>
 					<form action="#">
 						<!-- Current Password -->
 						<div class="form-group">
-						    <label for="current-email">当前邮箱</label>
+						    <label for="current-email">当前手机号码</label>
 						    <input type="email" class="form-control" id="current-email">
 						</div>
 						<!-- New email -->
 						<div class="form-group">
-						    <label for="new-email">新邮箱地址</label>
+						    <label for="new-email">新手机号码</label>
 						    <input type="email" class="form-control" id="new-email">
 						</div>
 						<!-- Submit Button -->
-						<button class="btn btn-transparent">修改邮箱地址</button>
+						<button class="btn btn-transparent">修改手机号码</button>
 					</form>
 				</div>
 			</div>
