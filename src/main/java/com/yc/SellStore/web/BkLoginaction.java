@@ -31,8 +31,8 @@ public class BkLoginaction {
 	private AdminBiz abiz;
 	
 	@GetMapping("bkindex")
-	public String home(){
-		return "home";
+	public String bkindex(){
+		return "bkindex";
 	}
 	
 	
@@ -48,10 +48,10 @@ public class BkLoginaction {
 			return "bklogin";
 		}
 		try {
-			Admininfo dbci = abiz.bklogin(ai);
-			model.addAttribute("bkloginedClient",dbci);
+			Admininfo dbai = abiz.bklogin(ai);
+			model.addAttribute("bkloginedClient",dbai);
 			System.out.println("登录成功");
-			return "home";
+			return "bkindex";
 		} catch (BizException e) {
 			e.printStackTrace();
 			model.addAttribute("msg",e.getMessage());

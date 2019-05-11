@@ -27,15 +27,13 @@
 			B5 Sell Management
         </div>
         <div class="login_account">
-        	<form:input type="text" class="text" path="adminName"
-				value="Username" onfocus="this.value = '';"
-				onblur="if (this.value == '') {this.value = 'Username';}"></form:input>
-			<form:errors path="adminName" placeholder="手机/邮箱/登录帐号"></form:errors>
+        	<form:input type="text"  path="adminName"></form:input>
+			<form:errors path="adminName"></form:errors>
            <!--  <input type="text" placeholder="手机/邮箱/登录帐号"/> -->
         </div>
         <div class="login_password">
-        	<form:input type="password" path="adminPwd" value="Password"></form:input>
-			<form:errors path="adminPwd" placeholder="密码（8-20位，区分大小写）"></form:errors>
+        	<form:input type="password" path="adminPwd"></form:input>
+			<form:errors path="adminPwd"></form:errors>
             <%-- <input type="password" placeholder="密码（8-20位，区分大小写）"/> --%>
         </div>
         <div class="login_dis">
@@ -44,7 +42,7 @@
         </div>
         <div class="login_submit">
            <!--  <a href="index.html">登&nbsp;录</a> -->
-           <a onclick="document.getelementbyid('bkloginForm').submit();return false;">登&nbsp;录</a>
+           <a onclick="document:bkloginForm.submit()">登&nbsp;录</a>
           <!--  <input type="submit" value="Login"> -->
         </div>
         <div class="login_register">
