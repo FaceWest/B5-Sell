@@ -99,16 +99,25 @@
                     </ul>
                 </li>
                 <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe659;</i>
-                        <p>用户和权限管理</p></a>
+                    <a class="menua1" href="javascript:void(0)"><i class="iconfont left">&#xe697;</i>
+                       <p>用户和权限管理</p></a>
+                    <ul class="menu2">
+                        <li class="menuli2"><a class="menua2" href="javascript:menu_ajax('tgls/modify_password.html', '修改密码')"> <i class="iconfont left">&#xe60c;</i><i
+                                class="menua2_ico"><span></span></i>修改密码</a></li>
+                               
+                    </ul>
                 </li>
                 <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe60d;</i>
+                    <a class="menua1" href="javascript:menu_ajax('login', '用户和权限管理')"><i class="iconfont left">&#xe60d;</i>
                         <p>统计报表</p></a>
                 </li>
                 <li class="menuli1">
                     <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe607;</i>
                         <p>知识管理</p></a>
+                </li>
+                <li class="menuli1">
+                    <a class="menua1" href="javascript:menu_ajax('tgls/modify_password.html', '修改密码')"><i class="iconfont left">&#xe60c;</i>
+                        <p>修改密码</p></a>
                 </li>
             </ul>
         </div>

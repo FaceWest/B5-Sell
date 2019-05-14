@@ -14,7 +14,7 @@
     <meta name="description" content="网站简介"/>
     <!-- 网站简介 -->
     <meta name="keywords" content="搜索关键字，以半角英文逗号隔开"/>
-    <title>穷在闹市出品</title>
+    <title>B5 Sell</title>
 
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
