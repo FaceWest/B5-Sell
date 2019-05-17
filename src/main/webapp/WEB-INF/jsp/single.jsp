@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="CN">
 <head>
 
   <!-- SITE TITTLE -->
@@ -15,17 +16,18 @@
   <!-- Bootstrap -->
   <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Owl Carousel -->
-  <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-  <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+  <link href="../../plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+  <link href="../../plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
   <!-- Fancy Box -->
-  <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-  <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-  <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+  <link href="../../plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+  <link href="../../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+  <link href="../../plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
   <!-- CUSTOM CSS -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet">
 
+ <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- FAVICON -->
   <link href="img/favicon.png" rel="shortcut icon">
 
@@ -35,72 +37,30 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+   <!-- JAVASCRIPTS -->
+  <script src="plugins/jquery/dist/jquery.min.js"></script>
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="plugins/tether/js/tether.min.js"></script>
+  <script src="plugins/raty/jquery.raty-fa.js"></script>
+  <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
+  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+  <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
+  
+  <script src="js/scripts.js"></script>
 
 </head>
 
 <body class="body-wrapper">
-
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="index.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item active">
-								<a class="nav-link" href="index.html">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="dashboard.html">Dashboard</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Pages <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="category.html">Category</a>
-									<a class="dropdown-item" href="single.html">Single Page</a>
-									<a class="dropdown-item" href="store-single.html">Store Single</a>
-									<a class="dropdown-item" href="dashboard.html">Dashboard</a>
-									<a class="dropdown-item" href="user-profile.html">User Profile</a>
-									<a class="dropdown-item" href="submit-coupon.html">Submit Coupon</a>
-									<a class="dropdown-item" href="blog.html">Blog</a>
-									<a class="dropdown-item" href="single-blog.html">Single Post</a>
-								</div>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Listing <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="index.html">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link add-button" href="#"><i class="fa fa-plus-circle"></i> Add Listing</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
+<c:if test="${! empty loginedClient}">
+<jsp:include page="head/loginedhead.jsp"></jsp:include>
+</c:if>
+<c:if test="${empty loginedClient}">
+<jsp:include page="head/head.jsp"></jsp:include>
+</c:if>
 <section class="page-search">
 	<div class="container">
 		<div class="row">
@@ -132,6 +92,7 @@
 <!--===================================
 =            Store Section            =
 ====================================-->
+<c:forEach items="${goodsinfo}" var ="g">
 <section class="section bg-gray">
 	<!-- Container Start -->
 	<div class="container">
@@ -139,30 +100,17 @@
 			<!-- Left sidebar -->
 			<div class="col-md-8">
 				<div class="product-details">
-					<h1 class="product-title">Hp Dual Core 2gb Ram-Slim Laptop Available In Very Low Price</h1>
+					<h1 class="product-title"></h1>
 					<div class="product-meta">
-						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href="">Andrew</a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Category<a href="">Electronics</a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location<a href="">Dhaka Bangladesh</a></li>
-						</ul>
+					
 					</div>
 					<div id="carouselExampleIndicators" class="product-slider carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						</ol>
+						
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img class="d-block w-100" src="images/products/products-1.jpg" alt="First slide">
+								<img class="" src="${g.pic}" alt="First slide" width="550px" height="590px">
 							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="images/products/products-2.jpg" alt="Second slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="images/products/products-3.jpg" alt="Third slide">
-							</div>
+							
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -175,185 +123,169 @@
 					</div>
 					<div class="content">
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
+							
 							<li class="nav-item">
-								<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Product Details</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Specifications</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews</a>
 							</li>
 						</ul>
 						<div class="tab-content" id="pills-tabContent">
-							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-								<h3 class="tab-title">Product Description</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia laudantium beatae quod perspiciatis, neque dolores eos rerum, ipsa iste cum culpa numquam amet provident eveniet pariatur, sunt repellendus quas voluptate dolor cumque autem molestias. Ab quod quaerat molestias culpa eius, perferendis facere vitae commodi maxime qui numquam ex voluptatem voluptate, fuga sequi, quasi! Accusantium eligendi vitae unde iure officia amet molestiae velit assumenda, quidem beatae explicabo dolore laboriosam mollitia quod eos, eaque voluptas enim fuga laborum, error provident labore nesciunt ad. Libero reiciendis necessitatibus voluptates ab excepturi rem non, nostrum aut aperiam? Itaque, aut. Quas nulla perferendis neque eveniet ullam?</p>
+									<div class="item-amount clearfix bgf5">
+							<div class="item-metatit">数量：</div>
+							<div class="amount-box">
+								<div class="amount-widget">
+									<input type="button" class="sub" value="-">
+									<input class="count" value="1" title="请输入购买量" type="text" name="count" >
+									<input type="button" class="add" value="+">
+									<input type="hidden" value="${g.goodsid}" class="goodsid">
+									<input type="hidden" value="${loginedClient.clientid}" class="clientid">
+									<input type="button" value="加入购物车" onclick="addShopcar();">
+									<input type="button" value="加入收藏" onclick="addMyFavorite();">
+									<input type="button" value="立即购买" onclick="BuyNow();">
+									<div class="amount-btn">
+										<a class="amount-but add"></a>
+										<a class="amount-but sub"></a>
+									</div>
+								</div>
+								<script>
+										$('.sub').click(function(){
+											var num = $('.count').val();
+											if(num>=1){
+												$('.count').val(num-1);
+											}
+										});
+										
+										$('.add').click(function(){
+											var num = $('.count').val();
+											var num1 = parseInt(num);
+											if(num>=0){
+												$('.count').val(num1+1);
+											}
+										});
+										
+										function addShopcar(){
+											var clientid = $('.clientid').val();
+											if(clientid==null||clientid==undefined||clientid==""){
+												alert("请登录账号！");
+												window.location.href="/login";
+											}else{
+											var count = parseInt($('.count').val());
+											var goodsid = $('.goodsid').val();
+											var data = new FormData();
+											data.append("count",count);
+											data.append("goodsid",goodsid);
+											data.append("clientid",clientid);
+											alert("进来了！")
+											$.ajax({
+												
+												type: "POST",
+												url: "/addShopcar",
+												data : data,
+												processData:false,
+												contentType: false,
+											    success: function(){
+											    	alert("成功添加至购物车");
+											    }
+											});
+											}
+										};
+										
+										
+										function addMyFavorite(){
+											var clientid = $('.clientid').val();
+											if(clientid==null||clientid==undefined||clientid==""){
+												alert("请登录账号！");
+												window.location.href="/login";
+											}else{
+											var goodsid = $('.goodsid').val();
+											var data = new FormData();
+											data.append("goodsid",goodsid);
+											data.append("clientid",clientid);
+											alert("进来了！")
+											$.ajax({
+												type: "POST",
+												url: "/addMyFavorite",
+												data : data,
+												processData:false,
+												contentType: false,
+											    success: function(){
+											    	alert("成功添加收藏");
+											    }
+											});
+											}
+										};
+										
+										function BuyNow(){
+											var clientid = $('.clientid').val();
+											if(clientid==null||clientid==undefined||clientid==""){
+												alert("请登录账号！");
+												window.location.href="/login";
+											}else{
+												if(confirm("确定要购买吗？")){
+													var goodsid = $('.goodsid').val();
+													var data = new FormData();
+													data.append("goodsid",goodsid);
+													data.append("clientid",clientid);
+													$.ajax({
+														type: "POST",
+														url: "/BuyNow",
+														data : data,
+														processData:false,
+														contentType: false,
+													    success: function(){
+													    	alert("成功添加收藏");
+													    }
+													});
+												}
+												
+											}
+										};
+										
+										
+										
+								</script>
+							</div>
+							
+							<div>
+							<ul>
+							<li class="">
 
-								<iframe width="100%" height="400" src="https://www.youtube.com/embed/LUH7njvhydE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-								<p></p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sed, officia reiciendis necessitatibus obcaecati eum, quaerat unde illo suscipit placeat nihil voluptatibus ipsa omnis repudiandae, excepturi! Id aperiam eius perferendis cupiditate exercitationem, mollitia numquam fuga, inventore quam eaque cumque fugiat, neque repudiandae dolore qui itaque iste asperiores ullam ut eum illum aliquam dignissimos similique! Aperiam aut temporibus optio nulla numquam molestias eum officia maiores aliquid laborum et officiis pariatur, delectus sapiente molestiae sit accusantium a libero, eligendi vero eius laboriosam minus. Nemo quibusdam nesciunt doloribus repellendus expedita necessitatibus velit vero?</p>
-
+							</li>
+							</ul>
 							</div>
-							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-								<h3 class="tab-title">Product Specifications</h3>
-								<table class="table table-bordered product-table">
-								  <tbody>
-								    <tr>
-								      <td>Seller Price</td>
-								      <td>$450</td>
-								    </tr>
-								    <tr>
-								      <td>Added</td>
-								      <td>26th December</td>
-								    </tr>
-								    <tr>
-								      <td>State</td>
-								      <td>Dhaka</td>
-								    </tr>
-								    <tr>
-								      <td>Brand</td>
-								      <td>Apple</td>
-								    </tr>
-								    <tr>
-								      <td>Condition</td>
-								      <td>Used</td>
-								    </tr>
-								    <tr>
-								      <td>Model</td>
-								      <td>2017</td>
-								    </tr>
-								    <tr>
-								      <td>State</td>
-								      <td>Dhaka</td>
-								    </tr>
-								    <tr>
-								      <td>Battery Life</td>
-								      <td>23</td>
-								    </tr>
-								  </tbody>
-								</table>
-							</div>
-							<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-								<h3 class="tab-title">Product Review</h3>
-								<div class="product-review">
-							  		<div class="media">
-							  			<!-- Avater -->
-							  			<img src="images/user/user-thumb.jpg" alt="avater">
-							  			<div class="media-body">
-							  				<!-- Ratings -->
-							  				<div class="ratings">
-							  					<ul class="list-inline">
-							  						<li class="list-inline-item">
-							  							<i class="fa fa-star"></i>
-							  						</li>
-							  						<li class="list-inline-item">
-							  							<i class="fa fa-star"></i>
-							  						</li>
-							  						<li class="list-inline-item">
-							  							<i class="fa fa-star"></i>
-							  						</li>
-							  						<li class="list-inline-item">
-							  							<i class="fa fa-star"></i>
-							  						</li>
-							  						<li class="list-inline-item">
-							  							<i class="fa fa-star"></i>
-							  						</li>
-							  					</ul>
-							  				</div>
-							  				<div class="name">
-							  					<h5>Jessica Brown</h5>
-							  				</div>
-							  				<div class="date">
-							  					<p>Mar 20, 2018</p>
-							  				</div>
-							  				<div class="review-comment">
-							  					<p>
-							  						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqe laudant tota rem ape riamipsa eaque.
-							  					</p>
-							  				</div>
-							  			</div>
-							  		</div>
-							  		<div class="review-submission">
-							  			<h3 class="tab-title">Submit your review</h3>
-						  				<!-- Rate -->
-						  				<div class="rate">
-						  					<div class="starrr"></div>
-						  				</div>
-						  				<div class="review-submit">
-						  					<form action="#" class="row">
-						  						<div class="col-lg-6">
-						  							<input type="text" name="name" id="name" class="form-control" placeholder="Name">
-						  						</div>
-						  						<div class="col-lg-6">
-						  							<input type="email" name="email" id="email" class="form-control" placeholder="Email">
-						  						</div>
-						  						<div class="col-12">
-						  							<textarea name="review" id="review" rows="10" class="form-control" placeholder="Message"></textarea>
-						  						</div>
-						  						<div class="col-12">
-						  							<button type="submit" class="btn btn-main">Sumbit</button>
-						  						</div>
-						  					</form>
-						  				</div>
-							  		</div>
-							  	</div>
-							</div>
+							
+							
+							
+						</div>	
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="sidebar">
-					<div class="widget price text-center">
-						<h4>Price</h4>
-						<p>$230</p>
-					</div>
 					<!-- User Profile widget -->
 					<div class="widget user">
-						<img class="rounded-circle" src="images/user/user-thumb.jpg" alt="">
-						<h4><a href="">Jonathon Andrew</a></h4>
-						<p class="member-time">Member Since Jun 27, 2017</p>
-						<a href="">See all ads</a>
-						<ul class="list-inline mt-20">
-							<li class="list-inline-item"><a href="" class="btn btn-contact">Contact</a></li>
-							<li class="list-inline-item"><a href="" class="btn btn-offer">Make an offer</a></li>
-						</ul>
+						<span style="text-align:center;"><h1>${g.goodsname}</h1></span>
 					</div>
 					<!-- Map Widget -->
 					<div class="widget map">
-						<div class="map">
-							<div id="map"></div>
-						</div>
+					<div class="widget price text-center">
+						<h4>价格</h4>
+						<p>￥${g.price}</p>
+					</div>
+					
 					</div>
 					<!-- Rate Widget -->
 					<div class="widget rate">
 						<!-- Heading -->
-						<h5 class="widget-header text-center">What would you rate
-						<br>
-						this product</h5>
+						<h5 class="widget-header text-center">评价一下这款商品吧！</h5>
 						<!-- Rate -->
 						<div class="starrr"></div>
 					</div>
 					<!-- Safety tips widget -->
-					<div class="widget disclaimer">
-						<h5 class="widget-header">Safety Tips</h5>
-						<ul>
-							<li>Meet seller at a public place</li>
-							<li>Check the item before you buy</li>
-							<li>Pay only after collecting the item</li>
-							<li>Pay only after collecting the item</li>
-						</ul>
-					</div>
+						
 					<!-- Coupon Widget -->
-					<div class="widget coupon text-center">
-						<!-- Coupon description -->
-						<p>Have a great product to post ? Share it with
-							your fellow users.
-						</p>
-						<!-- Submii button -->
-						<a href="" class="btn btn-transparent-white">Submit Listing</a>
-					</div>
+					
 					
 				</div>
 			</div>
@@ -362,107 +294,13 @@
 	</div>
 	<!-- Container End -->
 </section>
+</c:forEach>
 <!--============================
 =            Footer            =
 =============================-->
+<jsp:include page="head/footer.jsp"></jsp:include>
 
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
-          <p class="alt-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-2 offset-lg-1 col-md-3">
-        <div class="block">
-          <h4>Site Pages</h4>
-          <ul>
-            <li><a href="#">Boston</a></li>
-            <li><a href="#">How It works</a></li>
-            <li><a href="#">Deals & Coupons</a></li>
-            <li><a href="#">Articls & Tips</a></li>
-            <li><a href="#">Terms of Services</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
-        <div class="block">
-          <h4>Admin Pages</h4>
-          <ul>
-            <li><a href="#">Boston</a></li>
-            <li><a href="#">How It works</a></li>
-            <li><a href="#">Deals & Coupons</a></li>
-            <li><a href="#">Articls & Tips</a></li>
-            <li><a href="#">Terms of Services</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Promotion -->
-      <div class="col-lg-4 col-md-7">
-        <!-- App promotion -->
-        <div class="block-2 app-promotion">
-          <a href="">
-            <!-- Icon -->
-            <img src="images/footer/phone-icon.png" alt="mobile-icon">
-          </a>
-          <p>Get the Dealsy Mobile App and Save more</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Container End -->
-</footer>
-<!-- Footer Bottom -->
-<footer class="footer-bottom">
-    <!-- Container Start -->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-12">
-          <!-- Copyright -->
-          <div class="copyright">
-            <p>Copyright © 2016. All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-12">
-          <!-- Social Icons -->
-          <ul class="social-media-icons text-right">
-              <li><a class="fa fa-facebook" href=""></a></li>
-              <li><a class="fa fa-twitter" href=""></a></li>
-              <li><a class="fa fa-pinterest-p" href=""></a></li>
-              <li><a class="fa fa-vimeo" href=""></a></li>
-            </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Container End -->
-    <!-- To Top -->
-    <div class="top-to">
-      <a id="top" class="" href=""><i class="fa fa-angle-up"></i></a>
-    </div>
-</footer>
-
-  <!-- JAVASCRIPTS -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="plugins/tether/js/tether.min.js"></script>
-  <script src="plugins/raty/jquery.raty-fa.js"></script>
-  <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
-  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-  <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
-  
-  <script src="js/scripts.js"></script>
+ 
 
 </body>
 

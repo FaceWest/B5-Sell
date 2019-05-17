@@ -8,8 +8,8 @@
 
 	<context id="MySQLTables" targetRuntime="MyBatis3">
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/sell?serverTimezone=GMT%2B8" userId="root"
-			password="a">
+			connectionURL="jdbc:mysql://127.0.0.1:3306/sell?serverTimezone=GMT%2B8&amp;useSSL=false" userId="root"
+			password="19990816">
 		</jdbcConnection>
 
 		
@@ -26,7 +26,7 @@
 			targetPackage="com.yc.SellStore.dao" targetProject="src/main/java">
 		</javaClientGenerator>
 
-		<table  tableName="clientInfo" >
+		<!-- <table  tableName="clientInfo" >
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
 		<table  tableName="goods">
@@ -37,11 +37,11 @@
 		</table>
 		<table  tableName="evalute">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
-		</table>
-		<table  tableName="olderList">
+		</table> --> 
+		<table  tableName="orderList">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
-		<table  tableName="picture">
+		<!-- <table  tableName="picture">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
 		<table  tableName="shopcar">
@@ -52,6 +52,15 @@
 		</table>
 		<table  tableName="admininfo">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+		</table> -->
+		<!-- <table  tableName="admininfo">
+			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
+		<table  tableName="peisong">
+			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+		</table> -->
+		<!-- <table  tableName="collect">
+			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+		</table> -->
 	</context>
 </generatorConfiguration>

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="CN">
 <head>
 
 <!-- SITE TITTLE -->
@@ -37,6 +38,22 @@
 
 <!-- FAVICON -->
 <link href="img/favicon.png" rel="shortcut icon">
+<script src="../../plugins/jquery/jquery.min.js"></script>
+	<script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../../plugins/tether/js/tether.min.js"></script>
+	<script src="../../plugins/raty/jquery.raty-fa.js"></script>
+	<script src="../../plugins/bootstrap/dist/js/popper.min.js"></script>
+	<script src="../../plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script
+		src="../../plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+	<script src="../../plugins/slick-carousel/slick/slick.min.js"></script>
+	<script
+		src="../../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="../../plugins/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="../../plugins/smoothscroll/SmoothScroll.min.js"></script>
+
+	<script src="js/scripts.js"></script>
+
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,6 +61,14 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
+  <style type="text/css">
+	.searchBox{
+		width: 1000px;
+	}  
+	
+	.
+  </style>
 
 </head>
 
@@ -89,25 +114,19 @@
 					</div>
 					<!-- Advance Search -->
 					<div class="advance-search">
-						<form action="#">
+						<form:form action="/search" method="get" modelAttribute="goodsinfo">
 							<div class="row">
-								<!-- Store Search -->
-								<div class="col-lg-6 col-md-12">
+								
+								<div class="searchBox">
 									<div class="block d-flex">
-										<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
-											id="search" placeholder="Search for store">
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-12">
-									<div class="block d-flex">
-										<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
-											id="search" placeholder="Search for store">
+										<form:input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
+											id="searchforname" placeholder="商品名" name="goodsname" path="goodsname" />
 										<!-- Search Button -->
-										<button class="btn btn-main">SEARCH</button>
+										<button class="btn btn-main">搜索</button>
 									</div>
 								</div>
 							</div>
-						</form>
+						</form:form>
 
 					</div>
 
@@ -447,22 +466,7 @@
 =============================-->
 <jsp:include page="head/footer.jsp"></jsp:include>
 	<!-- JAVASCRIPTS -->
-	<script src="../../plugins/jquery/jquery.min.js"></script>
-	<script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
-	<script src="../../plugins/tether/js/tether.min.js"></script>
-	<script src="../../plugins/raty/jquery.raty-fa.js"></script>
-	<script src="../../plugins/bootstrap/dist/js/popper.min.js"></script>
-	<script src="../../plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script
-		src="../../plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-	<script src="../../plugins/slick-carousel/slick/slick.min.js"></script>
-	<script
-		src="../../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	<script src="../../plugins/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="../../plugins/smoothscroll/SmoothScroll.min.js"></script>
-
-	<script src="js/scripts.js"></script>
-
+	
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Cn">
 <head>
 
   <!-- SITE TITTLE -->
@@ -56,43 +56,18 @@
 	<div class="container">
 		<!-- Row Start -->
 		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-				<div class="sidebar">
-					<!-- User Widget -->
-					<div class="widget user-dashboard-profile">
-						<!-- User Image -->
-						<div class="profile-thumb">
-							<img src="${loginedClient.headpic}" alt="" class="rounded-circle">
-						</div>
-						
-						<!-- User Name -->
-						<h5 class="text-center">${loginedClient.clientname}</h5>
-						<a href="user-profile" class="btn btn-main-sm">编辑资料</a>
-					</div>
-					<!-- Dashboard Links -->
-					<div class="widget user-dashboard-menu">
-						<ul>
-							<li class="active" ><a href=""><i class="fa fa-user"></i> My Ads</a></li>
-							<li><a href=""><i class="fa fa-bookmark-o"></i> Favourite Ads <span>5</span></a></li>
-							<li><a href=""><i class="fa fa-file-archive-o"></i>Archived Ads <span>12</span></a></li>
-							<li><a href=""><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a></li>
-							<li><a href=""><i class="fa fa-cog"></i> Logout</a></li>
-							<li><a href=""><i class="fa fa-power-off"></i>Delete Account</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			<jsp:include page="head/Menu.jsp"></jsp:include>
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<!-- Recently Favorited -->
 				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">My Ads</h3>
+					<h3 class="widget-header">我的订单</h3>
 					<table class="table table-responsive product-dashboard-table">
 						<thead>
 							<tr>
-								<th>Image</th>
-								<th>Product Title</th>
-								<th class="text-center">Category</th>
-								<th class="text-center">Action</th>
+								<th>图片</th>
+								<th>商品名</th>
+								<th class="text-center">状态</th>
+								<th class="text-center">操作</th>
 							</tr>
 						</thead>
 						<tbody>

@@ -20,8 +20,8 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item active"><a class="nav-link" href="index">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="dashboard">Dashboard</a></li>
+							<li class="nav-item active"><a class="nav-link" href="index">首页</a></li>
+							<li class="nav-item"><a class="nav-link" href="dashboard">导航</a></li>
 							<li class="nav-item dropdown dropdown-slide"><a
 								class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> Pages <span><i

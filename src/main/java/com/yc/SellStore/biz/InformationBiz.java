@@ -42,5 +42,15 @@ public class InformationBiz {
 		am.updateByExampleSelective(address, ae);
 		
 	}
+	public void changePwd(Clientinfo ci) {
+		ClientinfoExample cie = new ClientinfoExample();	
+		cie.createCriteria().andClientidEqualTo(ci.getClientid());
+		cim.updateByExampleSelective(ci,cie);
+	}
+	public void changePhone(Clientinfo ci) {
+		ClientinfoExample cie = new ClientinfoExample();	
+		cie.createCriteria().andClientidEqualTo(ci.getClientid());
+		cim.updateByExampleSelective(ci,cie);
+	}
 
 }

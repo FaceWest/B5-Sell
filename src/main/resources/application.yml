@@ -1,6 +1,6 @@
 spring: 
  datasource:
-  url: jdbc:mysql://127.0.0.1:3306/sell?serverTimezone=GMT%2B8
+  url: jdbc:mysql://127.0.0.1:3306/sell?useSSL=false
   driverClassName: com.mysql.cj.jdbc.Driver
   username: root
   password: 19990816
@@ -12,11 +12,6 @@ spring:
     - classpath:/static/
     - classpath:/public/
  
-<<<<<<< HEAD
-=======
- 
- 
->>>>>>> refs/remotes/origin/master
  mvc:
   view:
     prefix: WEB-INF/jsp/
@@ -25,12 +20,24 @@ spring:
  servlet:
   multipart:
    max-file-size: 10MB
-   
 
 logging:
  level:
    root: ERROR
    com.yc.SellStore: DEBUG
    
+   
+   
+ #沙箱配置 
+pay:
+ alipay:
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+  appid: 2016093000635080
+  appPrivateKey: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCWCZP/ogVrq0R5vO+QLytqN9w0ryOOVxcB25FGm0XjqU04YPJgULt/EyvnVrzI2L4oIMsNUFRgjf2NzqGBTQlqnu8JtU0vetNcZL5jzufcIVerHPzqF7biX9m7sKUljE9eNDcfU4/JRCZct0BcScSwmW8aPg+o++W01ElhsRoxYtrFiffCM22v1peKTsVrgKzex49LBGr/wCTS7yaHyvG9vsjIYG0rNvp5w/FJWdNWkQk4whuNE8MiZLGmt5C6kbtQwRMgR7IsfMTeD7+ns8xHomijHNxXPHCvByWXeDF8K3hpEZgOvFbY1cq6DswghVZ0n06dV8k1oolfg4DXrr7/AgMBAAECggEBAJQFPw2kOtTOUvAHhhEpeBuCoK0ZXGrBYOFkTR7rcTf5f0Vv369F9rSXpWjGGdnMe037jFfGOHhJnSyZ/pwh9HhL9GgPheahtoQgn/S32+dAvc0C/EG2w6byCU0yKLuygVrfCMLPHbvikDZIVCa4YGQZ+5JYR/rfCPAtv3ex0bWF3YSfe51mu+CxGC1+jOr04SQOSym0xksQi08yW1T8akWgytG6hQKzF7MstG8YS2+zcsosQLMI1UA2+k6XNzleGbZoZZfdG44oN10ihDrQ5r1DxPxLqbh6VObxWyGzdvfPgk9Rah7z10KWjXldNnrAZqmsJ8ZNIl2jTViK3/m3qoECgYEA1CQPc3cwQ6QGuYA3/tLmKvOB2Epj8u+aWjkit996woXwwpjYRyeycWiDpnikr9VvZg37yaaF7l2IOsNZDaOz9Pd258LzmlPeQeYJwUPEK/hD3fbwBmWdWtlutHHND99JKZtODTtoFyKtiQnifdJuSxTg9WKzavQfHJEQiyLIUCMCgYEAtQ6UjY329tRUK/dftuktr7/hHfqb2CqqGw6gXKMGQdXB7CN5XHFmJjcuRUHNK5Tmth5MY+UfYM0s0JIVkotpEhkrpnQv+EDAsveq49tlIrFk/pqf20/vO/dmYwIB82Kz1Ov3pHsnLpTX7X7YDNUQIjQlqvESkGMRGNHmmreH1XUCgYEAnIyb5l6ffFsQJ1ZKfD9QYYPfXyjOh1lv84LUbxJ5OhGzsTcv65qM4Yn6FSBUj/mWwp4xIAdGMLhPLuY30ovq4iy4T6GbOVkI3GKQ8lE69CO6mZOAX4gfTgrE2l5csIjbKdwVBki/sMsDeuyTeryObdPTiuIyewv55Y/bwIGDhzcCgYBTRmx/Gv+vEYPRYQrt9xvjTO6+uih56U2p+jU5xmW3XBjAgqRsJ2AjTZgDlLtIQ0lGFHNwMs8W1+e32qj/aQ2fnGIeQixaE3ZOGmnIOX2v0kWwcO/7kC1puGWoPiElj41E7m9NgLNJ0n3qJ0A5zrmH8dItaInwTRBtCQX2vVlFjQKBgBG1/chN3WsERd8UI5jFMzuTXOGaAyNdhrOIDmR46GHt3xLnBIyH554h0n9C3iH2qgeVODz1gXs+iFuf9AhDJ/OgPEcmpv7oeGgJHd1KSNJBbIQHRw7+gjqKDKRy4EU6uDKU/gMM49ttvpDlukJ6NYqqCswC75iZDmuBW1GwsVOh
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkgqwUQw5npodsj9DS/vITMCS6fUG1S8P50opctZnv1S3FNk8LIIiMdmTyHfMwMNGEq0f0uSUieQ6SQEUP3IKoqjmBhZDJxVlXJOq2qT/TS4e5wflKOlqdNvoHxrCc22ONzTiO0eZfFnCjmsXbcuh7GYTRtwyyYzA97QhgA0W8TtuwvV2mBJFMJC1WQlykr+EfGVp/ggJIc232ILpH31VF5CEXKQLrLfFqEPDsPhf8lePDIkIpHRNpU/zEF95NuIcPo8g8FzLZIM137sGM8S5gl/qSw+7+gefAqbRXTGK6WEPYUycln9ZkBtE2LHsv1PIABaGTdh11X6BrC+E2GG98QIDAQAB
+  returnUrl: http://smkmrm.natappfree.cc/returnUrl
+  notifyUrl: http://smkmrm.natappfree.cc/notifyUrl
+  
+  
 
    

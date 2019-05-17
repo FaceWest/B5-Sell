@@ -24,8 +24,12 @@ public class SkipAction {
 	 model.addAttribute("userinfo",ci);
 	 return"dashboard";
  }
+
  
- 
+ @GetMapping("/category")
+ public String category() {
+	 return"category";
+ }
  
  
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.yc.SellStore.bean.Clientinfo;
+import com.yc.SellStore.bean.Goods;
 import com.yc.SellStore.biz.BizException;
 import com.yc.SellStore.biz.ClientBiz;
 import com.yc.SellStore.dao.ClientinfoMapper;
@@ -27,8 +28,8 @@ public class Loginaction {
 	@Resource
 	private ClientBiz cbiz;
 	
-	@GetMapping("index")
-	public String home(){
+	@GetMapping("/index")
+	public String home(@ModelAttribute("goodsinfo") Goods goods){
 		return "home";
 	}
 	
@@ -40,7 +41,7 @@ public class Loginaction {
 	
 
 	@PostMapping("tologin")
-	public String tologin(@ModelAttribute @Valid Clientinfo ci,Errors errors,Model model,HttpServletRequest request) {
+	public String tologin(@ModelAttribute @Valid Clientinfo ci,Errors errors,Model model,HttpServletRequest request,@ModelAttribute("goodsinfo") Goods goods) {
 		if(errors.hasErrors()) {
 			return "login";
 		}
@@ -62,7 +63,7 @@ public class Loginaction {
 		return"register";
 	}
 	@PostMapping("/toregister")
-	public String toregister(@ModelAttribute("Clientinfo") @Valid Clientinfo ci,Errors errors,Model model) {
+	public String toregister(@ModelAttribute("Clientinfo") @Valid Clientinfo ci,Errors errors,Model model,@ModelAttribute("goodsinfo") Goods goods) {
 		if(errors.hasErrors()) {
 			return "register";
 		}
