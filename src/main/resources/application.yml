@@ -11,7 +11,7 @@ spring:
     - file:/Users/longhongjiang/Downloads/myweb/
     - classpath:/static/
     - classpath:/public/
- 
+
  mvc:
   view:
     prefix: WEB-INF/jsp/

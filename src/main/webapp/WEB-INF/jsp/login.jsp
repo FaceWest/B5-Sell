@@ -51,7 +51,7 @@
 				onblur="if (this.value == '') {this.value = 'Username';}"></form:input>
 			<form:errors path="clientname"></form:errors>
 			<div class="key">
-				<form:input type="password" path="pwd" value="Password"></form:input>
+				<form:input type="password" path="pwd" ></form:input>
 				<form:errors path="pwd"></form:errors>
 			</div>
 			<a href="register"> 立即注册！</a> <a href="login/reset">找回密码</a>

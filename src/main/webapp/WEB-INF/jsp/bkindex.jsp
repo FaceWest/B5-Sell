@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +13,7 @@
     <meta name="description" content="网站简介"/>
     <!-- 网站简介 -->
     <meta name="keywords" content="搜索关键字，以半角英文逗号隔开"/>
-    <title>穷在闹市出品</title>
+    <title>B5 sell</title>
 
 
     <link rel="stylesheet" type="text/css" href="css/base.css">
@@ -37,10 +36,10 @@
 <body>
 
 <div class="top">
-    <p>穷在闹市<font>系统设置</font></p>
+    <p>B5 Sell<font>系统设置</font></p>
     <span>
-        <a class="but" href=""><i class="iconfont">&#xe6a3;</i>退出系统</a>
-        <a class="but" href=""><i class="iconfont">&#xe600;</i>返回首页</a>
+        <a class="but" href="bklogin"><i class="iconfont">&#xe6a3;</i>退出系统</a>
+        <a class="but" href="#"><i class="iconfont">&#xe600;</i>返回首页</a>
         <a>欢迎您，张伟平</a>
     </span>
 </div>
@@ -100,16 +99,25 @@
                     </ul>
                 </li>
                 <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe659;</i>
-                        <p>用户和权限管理</p></a>
+                    <a class="menua1" href="javascript:void(0)"><i class="iconfont left">&#xe697;</i>
+                       <p>用户和权限管理</p></a>
+                    <ul class="menu2">
+                        <li class="menuli2"><a class="menua2" href="javascript:menu_ajax('tgls/modify_password.html', '修改密码')"> <i class="iconfont left">&#xe60c;</i><i
+                                class="menua2_ico"><span></span></i>修改密码</a></li>
+                               
+                    </ul>
                 </li>
                 <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe60d;</i>
+                    <a class="menua1" href="javascript:menu_ajax('login', '用户和权限管理')"><i class="iconfont left">&#xe60d;</i>
                         <p>统计报表</p></a>
                 </li>
                 <li class="menuli1">
                     <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe607;</i>
                         <p>知识管理</p></a>
+                </li>
+                <li class="menuli1">
+                    <a class="menua1" href="javascript:menu_ajax('tgls/modify_password.html', '修改密码')"><i class="iconfont left">&#xe60c;</i>
+                        <p>修改密码</p></a>
                 </li>
             </ul>
         </div>
@@ -125,7 +133,7 @@
 </div>
 
 <div class="copyright">
-    Copyright©2011-2018 穷在闹市出品
+    Copyright©2011-2018 B5 sell
 </div>
 
 

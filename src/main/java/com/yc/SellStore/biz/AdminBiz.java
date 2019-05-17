@@ -19,10 +19,10 @@ public class AdminBiz {
 	@Resource
 	private AdmininfoMapper aim;
 	
-	public Admininfo bklogin(Admininfo ci) throws BizException{
-		AdmininfoExample cie = new AdmininfoExample();
-		cie.createCriteria().andAdminNameLike(ci.getAdminName()).andAdminPwdLike(ci.getAdminPwd());
-		List<Admininfo> list=aim.selectByExample(cie);
+	public Admininfo bklogin(Admininfo ai) throws BizException{
+		AdmininfoExample aie = new AdmininfoExample();
+		aie.createCriteria().andAdminNameLike(ai.getAdminName()).andAdminPwdLike(ai.getAdminPwd());
+		List<Admininfo> list=aim.selectByExample(aie);
 		if(list.size()==0) {
 			throw new BizException("用户名或密码错误");
 		}
