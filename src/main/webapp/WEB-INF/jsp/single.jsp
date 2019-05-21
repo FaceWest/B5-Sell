@@ -129,6 +129,9 @@
 							<li class="nav-item">
 							</li>
 						</ul>
+						
+						<form action="/alipay/page/gotoPayPage" method="post" id="payform">
+						
 						<div class="tab-content" id="pills-tabContent">
 									<div class="item-amount clearfix bgf5">
 							<div class="item-metatit">数量：</div>
@@ -137,6 +140,7 @@
 									<input type="button" class="sub" value="-">
 									<input class="count" value="1" title="请输入购买量" type="text" name="count" >
 									<input type="button" class="add" value="+">
+									<input type="hidden" value="${g.price}" name="price">
 									<input type="hidden" value="${g.goodsid}" class="goodsid">
 									<input type="hidden" value="${loginedClient.clientid}" class="clientid">
 									<input type="button" value="加入购物车" onclick="addShopcar();">
@@ -222,20 +226,21 @@
 												window.location.href="/login";
 											}else{
 												if(confirm("确定要购买吗？")){
+													var form  =$('#payform');
 													var goodsid = $('.goodsid').val();
 													var data = new FormData();
 													data.append("goodsid",goodsid);
 													data.append("clientid",clientid);
-													$.ajax({
+													/* $.ajax({
 														type: "POST",
-														url: "/BuyNow",
+														url: "/alipay/page/gotoPayPage",
 														data : data,
 														processData:false,
 														contentType: false,
 													    success: function(){
-													    	alert("成功添加收藏");
 													    }
-													});
+													}); */
+													form.submit();
 												}
 												
 											}
@@ -246,18 +251,13 @@
 								</script>
 							</div>
 							
-							<div>
-							<ul>
-							<li class="">
-
-							</li>
-							</ul>
-							</div>
+							
 							
 							
 							
 						</div>	
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>

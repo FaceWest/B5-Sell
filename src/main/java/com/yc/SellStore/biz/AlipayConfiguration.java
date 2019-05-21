@@ -4,6 +4,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.alipay.api.AlipayClient;
+import com.alipay.api.DefaultAlipayClient;
 import com.alipay.demo.trade.service.AlipayTradeService;
 import com.alipay.demo.trade.service.impl.AlipayTradeServiceImpl;
 
@@ -27,5 +29,19 @@ public class AlipayConfiguration {
                 .setSignType(properties.getSignType())
                 .build();
     }
+    /**
+	 * alipay-sdk-java
+	 * @return
+	 */
+	@Bean
+	public AlipayClient alipayClient(){
+		return new DefaultAlipayClient(properties.getGatewayUrl(),
+				properties.getAppid(),
+				properties.getAppPrivateKey(),
+				properties.getFormate(),
+				properties.getCharset(),
+				properties.getAlipayPublicKey(),
+				properties.getSignType());
+	}
 
 }

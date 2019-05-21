@@ -17,9 +17,9 @@
 					<div class="widget user-dashboard-menu">
 						<ul>
 							<li class="active" ><a href=""><i class="fa fa-user"></i> 我的订单</a></li>
-							<li><a href=""><i class="fa fa-bookmark-o"></i> 我的收藏<span>5</span></a></li>
-							<li><a href=""><i class="fa fa-file-archive-o"></i>Archived Ads <span>12</span></a></li>
-							<li><a href=""><i class="fa fa-bolt"></i> 待配送<span>23</span></a></li>
+							<li><a href="dashboard-favourite"><i class="fa fa-bookmark-o"></i> 我的收藏<span>5</span></a></li>
+							<li><a href="dashboard-shopcar"><i class="fa fa-file-archive-o"></i>购物车<span>12</span></a></li>
+							<li><a href=""><i class="fa fa-bolt"></i> 已完成订单<span>23</span></a></li>
 							<li><a href=""><i class="fa fa-cog"></i> 注销</a></li>
 						</ul>
 					</div>

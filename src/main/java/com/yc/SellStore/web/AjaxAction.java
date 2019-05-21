@@ -1,5 +1,9 @@
 package com.yc.SellStore.web;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.SellStore.bean.Collect;
 import com.yc.SellStore.bean.Orderlist;
+import com.yc.SellStore.bean.Shopcar;
 import com.yc.SellStore.biz.ShopBiz;
 import com.yc.SellStore.dao.OrderlistMapper;
 
@@ -22,12 +27,12 @@ public class AjaxAction {
 	@ResponseBody
 	public String addShopcar(@RequestParam("clientid") Integer clientid,@RequestParam("goodsid") Integer goodsid,@RequestParam("count") Integer count) {
 		System.out.println(clientid);
-		Orderlist list = new Orderlist();
-		list.setClientid(clientid);
-		list.setGoodsid(goodsid);
-		list.setCount(count);
-		System.out.println(list);
-		shopbiz.addShopcar(list);
+		Shopcar car = new Shopcar();
+		car.setClientid(clientid);
+		car.setGoodsid(goodsid);
+		car.setCount(count);
+		car.setOrdertime(new Date());
+		shopbiz.addShopcar(car);
 		return "成功添加至购物车";
 	}
 	
@@ -37,6 +42,7 @@ public class AjaxAction {
 		Collect collect = new Collect();
 		collect.setClientid(clientid);
 		collect.setGoodsid(goodsid);
+		collect.setOrdertime(new Date());
 		shopbiz.addMyFavorite(collect);
 		String message = "成功添加至我的收藏";
 		return message;

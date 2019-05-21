@@ -1,4 +1,4 @@
-package com.yc.SellStore.web;
+package com.yc.SellStore.biz;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

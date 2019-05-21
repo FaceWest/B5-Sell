@@ -38,16 +38,16 @@
 		<table  tableName="evalute">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table> --> 
-		<table  tableName="orderList">
+		 <table  tableName="orderList">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
 		<!-- <table  tableName="picture">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
-		</table>
+		</table> -->
 		<table  tableName="shopcar">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
-		<table  tableName="driver">
+		<!-- <table  tableName="driver">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
 		<table  tableName="admininfo">
@@ -59,8 +59,8 @@
 		<table  tableName="peisong">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table> -->
-		<!-- <table  tableName="collect">
+		<table  tableName="collect">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
-		</table> -->
+		</table> 
 	</context>
 </generatorConfiguration>
